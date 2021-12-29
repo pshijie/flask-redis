@@ -1,0 +1,15 @@
+name: Docker image buildx and push
+on: [push]
+jobs:
+  Docker-Build-Push:
+    runs-on: ubuntu-latest  # 表示工作会跑在ubuntu机器中
+    steps:
+      - 
+        name: Checkout
+        uses: actions/checkout@v2  # 该步GitHub已经定义好，表示将代码克隆到ubuntu机器中
+      -
+        name: docker image build
+        uses: docker build -t pshijie/flask-reids:latest
+      -
+        name: list docker image 
+        uses: docker image ls
